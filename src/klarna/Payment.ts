@@ -29,8 +29,8 @@ export class Payment implements IPayment {
     async createOneTimePaymentOrder(data: any): Promise<any> {
         try {
             const { authorizationToken, ...rest } = data;
-            const paymentIntentResult = await Api.call(`payments/v1/authorizations/${authorizationToken}/order`, RequestMethod.POST, { ...rest });
-            return paymentIntentResult;
+            const paymentOrderResult = await Api.call(`payments/v1/authorizations/${authorizationToken}/order`, RequestMethod.POST, { ...rest });
+            return paymentOrderResult;
         } catch (error) {
             return { hasError: true, error: error };
         }
