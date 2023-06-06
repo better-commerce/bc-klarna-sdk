@@ -1,7 +1,6 @@
 import axios from "../../base/api"
 import { KlarnaEnvironment } from "../../base/config/KlarnaEnvironment";
 import { APIException, AuthenticationException, InvalidRequestException } from "../../base/entity";
-import { RequestMethod } from "../../constants/enums/RequestMethod";
 
 const SingletonFactory = (function () {
     let accessToken = '';
