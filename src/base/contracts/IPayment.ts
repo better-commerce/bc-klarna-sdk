@@ -15,8 +15,8 @@ export interface IPayment {
     createOneTimePaymentOrder(data: any): any;
 
     /**
-     * Retrieve an order. Retrieve the full checkout order resource content.
-     * API Reference - https://docs.klarna.com/api/checkout/#operation/readOrderMerchant
+     * Get the details of an order. An order that has the given order id.
+     * API Reference - https://docs.klarna.com/api/ordermanagement/#operation/getOrder
      * @param data {String}
      * @returns 
      */

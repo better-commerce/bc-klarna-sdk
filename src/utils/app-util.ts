@@ -20,4 +20,4 @@ export const sanitizeAmount = (value: number) => {
         }
     }
     return amount;
-}
+};
