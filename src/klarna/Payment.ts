@@ -36,7 +36,18 @@ export class Payment implements IPayment {
         }
     }
 
+    /**
+     * Retrieve an order. Retrieve the full checkout order resource content.
+     * API Reference - https://docs.klarna.com/api/checkout/#operation/readOrderMerchant
+     * @param data {String}
+     * @returns 
+     */
     async getDetails(data: any): Promise<any> {
-        throw new Error("Not Implemented.");
+        try {
+            const orderResult = await Api.call(`ordermanagement/v1/orders/${data}`, RequestMethod.GET);
+            return orderResult;
+        } catch (error) {
+            return { hasError: true, error: error };
+        }
     }
 }
