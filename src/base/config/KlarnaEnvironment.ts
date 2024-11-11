@@ -24,6 +24,14 @@ export class KlarnaEnvironment {
      */
     static baseUrl: string;
 
+    /**
+     * Initializes the KlarnaEnvironment with the user id and password.
+     * Additionally, chooses which base url to use. If useSandBox is true, the sandbox url is used. Otherwise, the production url is used.
+     * @param {string} userId - The user id.
+     * @param {string} password - The password.
+     * @param {boolean} useSandBox - If true, use the sandbox url. Otherwise, use the production url.
+     * @returns {KlarnaEnvironment}
+     */
     static init(userId: string, password: string, useSandBox = true) {
         KlarnaEnvironment.userId = userId;
         KlarnaEnvironment.password = password;
@@ -37,16 +45,16 @@ export class KlarnaEnvironment {
     }
 
     /**
-     * Returns the public key.
-     * @return {string}
+     * Returns the user id.
+     * @returns {string} The user id.
      */
     static getUserId(): string {
         return KlarnaEnvironment.userId;
     }
 
     /**
-     * Returns the secret key.
-     * @return {string}
+     * Returns the password.
+     * @returns {string} The password.
      */
     static getPassword(): string {
         return KlarnaEnvironment.password;
@@ -54,7 +62,7 @@ export class KlarnaEnvironment {
 
     /**
      * Returns the base url.
-     * @return {string}
+     * @returns {string} The base url.
      */
     static getBaseUrl(): string {
         return KlarnaEnvironment.baseUrl;

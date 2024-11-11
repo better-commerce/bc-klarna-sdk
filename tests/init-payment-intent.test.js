@@ -10,25 +10,25 @@ KlarnaEnvironment.init("PK73987_e7a735db38e5", "h9CzUwm0pBhEhLOl");
 }
 */
 const data = {
-    "intent":"buy",
-    "purchase_country":"GB",
-    "purchase_currency":"GBP",
-    "locale":"en",
-    "order_amount":111,
-    "order_tax_amount":0,
-    "order_lines":[
+    "intent": "buy",
+    "purchase_country": "GB",
+    "purchase_currency": "EUR",
+    "locale": "en",
+    "order_amount": 205.98,
+    "order_tax_amount": 0,
+    "order_lines": [
         {
-            "type":"physical",
-            "reference":"Order 4518c296-2805-ee11-b1c2-000d3a211cf7 for basket bba015cf-0ade-4330-b77d-0350c3d3825b OrderPaymentId 318060-1109433",
-            "name":"122-KARM-I-NATURLIG-BOK-POLERAD-ALUMINIUM-OLJAD-EK(1)",
-            "quantity":1,
-            "unit_price":111,
-            "tax_rate":0,
-            "total_amount":111,
-            "total_discount_amount":0,
-            "total_tax_amount":0,
-            "image_url":"http://localhost:3000/product/products/kallemo-aluminium1-122-1-122-karm-i-naturlig-bok-polerad-aluminium-oljad-ek",
-            "product_url":"http://localhost:3000/product/products/kallemo-aluminium1-122-1-122-karm-i-naturlig-bok-polerad-aluminium-oljad-ek"
+            "type": "physical",
+            "reference": "Order 5922d53b-ffbf-ee11-b1c9-000d3a211cf7 for basket 1121541e-f17e-45e0-be72-cfeb71b6a8bd OrderPaymentId 10018-1202714",
+            "name": "HE0537EKRS(1)",
+            "quantity": 1,
+            "unit_price": 205.98,
+            "tax_rate": 0,
+            "total_amount": 205.98,
+            "total_discount_amount": 0,
+            "total_tax_amount": 0,
+            "image_url": "http://localhost:3000/product/products/ridill-he0537ekrs",
+            "product_url": "http://localhost:3000/product/products/ridill-he0537ekrs"
         }
     ]
 };

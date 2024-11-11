@@ -6,12 +6,16 @@ import { IPaymentIntent } from "../models/IPaymentIntent";
 import { sanitizeAmount } from "../utils/app-util";
 
 export class Payment implements IPayment {
-
+    
     /**
-     * Initiate a payment. 
+     * Initiates a payment intent session with the provided payment data.
+     * 
      * API Reference - https://docs.klarna.com/klarna-payments/integrate-with-klarna-payments/step-1-initiate-a-payment/
-     * @param data {IPaymentIntent}
-     * @returns 
+     * 
+     * @param data - The payment intent data containing details such as order amount, tax amount, 
+     *               order lines, and other related information.
+     * @returns A promise resolving to the result of the payment intent creation or an error object 
+     *          if an exception occurs.
      */
     async initIntent(data: IPaymentIntent): Promise<any> {
         try {
@@ -40,11 +44,16 @@ export class Payment implements IPayment {
         }
     }
 
+    
     /**
-     * Create a one-time payment order. Once Klarna authorizes the purchase, use the authorization token to create an order and complete the one-time payment.
+     * Create a one-time payment order.
+     * 
      * API Reference - https://docs.klarna.com/klarna-payments/integrate-with-klarna-payments/step-3-create-an-order/create-a-one-time-payment-order/
-     * @param data {Object}
-     * @returns 
+     * 
+     * @param data - The payment order data containing details such as order amount, tax amount, 
+     *               order lines, and other related information.
+     * @returns A promise resolving to the result of the payment order creation or an error object 
+     *          if an exception occurs.
      */
     async createOneTimePaymentOrder(data: any): Promise<any> {
         try {
@@ -77,9 +86,11 @@ export class Payment implements IPayment {
 
     /**
      * Get the details of an order. An order that has the given order id.
+     * 
      * API Reference - https://docs.klarna.com/api/ordermanagement/#operation/getOrder
-     * @param data {String}
-     * @returns 
+     * 
+     * @param data - The order id of the order to get the details for.
+     * @returns A promise resolving to the order details or an error object if an exception occurs.
      */
     async getDetails(data: any): Promise<any> {
         try {

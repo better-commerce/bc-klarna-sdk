@@ -28,15 +28,25 @@ const axiosInstance = SingletonFactory.axiosInstance;
 
 Object.freeze(axiosInstance)
 
-const fetcher = async ({
-    url = '',
-    method = 'post',
-    data = {},
-    params = {},
-    headers = {},
-    cookies = {},
-    baseUrl = "",
-}: any) => {
+/**
+ * Makes a request to the Klarna API.
+ *
+ * @param {Object} options
+ * @param {string} options.url - The URL of the request.
+ * @param {string} [options.method=post] - The HTTP method of the request.
+ * @param {Object} [options.data={}] - The data to be sent with the request.
+ * @param {Object} [options.params={}] - The URL parameters to be sent with the request.
+ * @param {Object} [options.headers={}] - The headers to be sent with the request.
+ * @param {Object} [options.cookies={}] - The cookies to be sent with the request.
+ * @param {string} [options.baseUrl=""] - The base URL of the request.
+ *
+ * @returns {Promise<Object>} The response from the API.
+ *
+ * @throws {InvalidRequestException} If the request is invalid.
+ * @throws {AuthenticationException} If the request is unauthorized.
+ * @throws {APIException} If the request is invalid or unauthorized.
+ */
+const fetcher = async ({ url = '', method = 'post', data = {}, params = {}, headers = {}, cookies = {}, baseUrl = "", }: any) => {
     const computedUrl = new URL(url, baseUrl || KlarnaEnvironment.getBaseUrl());
     const config: any = {
         method: method,
